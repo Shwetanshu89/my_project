@@ -12,10 +12,8 @@ const App = () => {
 
   const empData = async () => {
     try {
-      const response = await axios.get('https://reqres.in/api/users?page=2');
-
-     
-      setUsers(response.data.data);
+      const res = await axios.get('https://reqres.in/api/users?page=2');
+      setUsers(res.data.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
